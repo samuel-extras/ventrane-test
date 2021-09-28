@@ -1,21 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { SafeAreaView, StyleSheet, StatusBar, Platform } from "react-native";
+import DebitCard from "./App/components/DebitCard";
+import ServiceCard from "./App/components/ServiceCard";
+import TransactionCard from "./App/components/TransactionCard";
+import colors from "./App/config/colors";
+import TabNavigator from "./App/navigations/TabNavigator";
+import DebitCards from "./App/views/DebitCards";
+import Header from "./App/views/Header";
+import Services from "./App/views/Services";
+import Transactions from "./App/views/Transactions";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  return <TabNavigator />;
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: colors.ghostWHite,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 });
