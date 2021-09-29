@@ -3,7 +3,7 @@ import { View, StyleSheet, Image, Text } from "react-native";
 import SearchButton from "../components/SearchButton";
 import colors from "../config/colors";
 
-const Header = (props) => {
+const Header = ({ address }) => {
   return (
     <View style={styles.container}>
       <View style={styles.avatarName}>
@@ -16,7 +16,7 @@ const Header = (props) => {
           />
         </View>
         <View style={styles.text}>
-          <Text style={styles.hello}>Hello </Text>
+          <Text style={styles.hello}>{address} </Text>
           <Text style={styles.name}>Samuel Dior</Text>
         </View>
       </View>

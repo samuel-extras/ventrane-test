@@ -10,7 +10,7 @@ const ServiceCard = ({ label, color, icon, onPress }) => {
         style={[styles.card, { backgroundColor: color }]}
         onPress={onPress}
       >
-        <MaterialCommunityIcons name={icon} color={colors.white} size={30} />
+        <MaterialCommunityIcons name={icon} color={colors.white} size={34} />
       </TouchableOpacity>
       <Text style={styles.label}> {label} </Text>
     </View>
@@ -18,11 +18,12 @@ const ServiceCard = ({ label, color, icon, onPress }) => {
 };
 const styles = StyleSheet.create({
   card: {
-    width: 50,
-    height: 50,
+    width: 54,
+    height: 54,
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
+    elevation: 1,
   },
   container: {
     width: "25%",
@@ -33,8 +34,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 18,
     fontWeight: "900",
-    padding: 2,
-    marginTop: 12,
+    marginTop: "10%",
   },
 });
 

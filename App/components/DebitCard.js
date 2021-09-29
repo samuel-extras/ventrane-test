@@ -4,8 +4,8 @@ import colors from "../config/colors";
 
 const DebitCard = ({ balance, currency, digit, name, expire, type, color }) => {
   return (
-    <View style={[styles.container, {backgroundColor:color} ]}>
-      <View style={styles.balLogo}>
+    <View style={[styles.card, { backgroundColor: color }]}>
+      <View style={styles.header}>
         <Text style={styles.currentBal}>Current Balance</Text>
         <Image
           source={
@@ -20,14 +20,14 @@ const DebitCard = ({ balance, currency, digit, name, expire, type, color }) => {
         <Text style={styles.currency}>{currency}</Text>
         <Text style={styles.bal}> {balance}</Text>
       </View>
-      <View>
-        <Text style={styles.cardNum}>
+      <View style={styles.cardNum}>
+        <Text style={styles.number}>
           **** {` `} **** {` `} **** {` `} {digit}
         </Text>
       </View>
       <View style={styles.nameExp}>
         <Text style={styles.name}>{name}</Text>
-        <View>
+        <View style={styles.expiry}>
           <Text style={styles.exp}>Exp.Date</Text>
           <Text style={styles.date}>{expire}</Text>
         </View>
@@ -36,23 +36,25 @@ const DebitCard = ({ balance, currency, digit, name, expire, type, color }) => {
   );
 };
 const styles = StyleSheet.create({
-  balLogo: {
+  header: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    height: "25%",
   },
   cardNum: {
-    color: colors.white,
-    paddingVertical: 10,
-    fontSize: 23,
-    fontWeight: "900",
+    height: "25%",
+    alignItems: "flex-start",
+    justifyContent: "center",
   },
-  container: {
-    width: 320,
+
+  card: {
+    width: 328,
     height: 160,
     borderRadius: 20,
-    paddingHorizontal: 20,
-    marginHorizontal: 4,
+    paddingHorizontal: "6%",
+    paddingVertical: "2%",
+    marginRight: 10,
   },
   currentBal: {
     color: colors.white,
@@ -61,6 +63,7 @@ const styles = StyleSheet.create({
   currencyBal: {
     flexDirection: "row",
     alignItems: "center",
+    height: "25%",
   },
   currency: {
     color: colors.white,
@@ -75,6 +78,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 16,
   },
+  expiry: {
+    marginTop: "-3%",
+  },
   bal: {
     color: colors.white,
     paddingHorizontal: 8,
@@ -88,7 +94,13 @@ const styles = StyleSheet.create({
   nameExp: {
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
+    alignItems: "flex-start",
+    height: "25%",
+  },
+  number: {
+    color: colors.white,
+    fontSize: 23,
+    fontWeight: "900",
   },
   exp: {
     color: colors.white,

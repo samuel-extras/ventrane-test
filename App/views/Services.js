@@ -27,6 +27,7 @@ const Services = (props) => {
       <FlatList
         data={services}
         keyExtractor={(item) => item.value.toString()}
+        contentContainerStyle={{ flex: 1 }}
         numColumns={4}
         renderItem={({ item }) => (
           <ServiceCard label={item.label} icon={item.icon} color={item.color} />
@@ -40,14 +41,16 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     height: "20%",
     alignItems: "flex-start",
-    paddingVertical: 5,
+    paddingVertical: "1%",
   },
   heading: {
     fontWeight: "bold",
     fontSize: 20,
     color: colors.black,
-    paddingBottom: 10,
-    paddingLeft: 15,
+    height: "30%",
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: "4%",
   },
 });
 

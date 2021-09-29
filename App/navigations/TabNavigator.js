@@ -43,6 +43,11 @@ const TabNavigator = (props) => {
         <Tab.Screen
           name="Profile"
           component={Profile}
+          listeners={{
+            tabPress: (e) => {
+              e.preventDefault();
+            },
+          }}
           options={{
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons
@@ -56,6 +61,11 @@ const TabNavigator = (props) => {
         <Tab.Screen
           name="Settings"
           component={Settings}
+          listeners={{
+            tabPress: (e) => {
+              e.preventDefault();
+            },
+          }}
           options={{
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="cog" color={color} size={size} />

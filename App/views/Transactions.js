@@ -37,7 +37,7 @@ const transactions = [
 const Transactions = (props) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}> Recent Trransaction</Text>
+      <Text style={styles.heading}> Recent Transaction</Text>
       <FlatList
         data={transactions}
         keyExtractor={(item) => item.value.toString()}
@@ -60,13 +60,14 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: "space-between",
     flex: 1,
-    paddingHorizontal: 12,
+    paddingHorizontal: "4%",
+    marginTop: 10,
   },
   heading: {
     fontWeight: "bold",
     fontSize: 22,
     color: colors.black,
-    marginBottom: 10,
+    marginBottom: "4%",
   },
 });
 

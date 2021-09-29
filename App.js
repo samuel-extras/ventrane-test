@@ -13,11 +13,3 @@ import Transactions from "./App/views/Transactions";
 export default function App() {
   return <TabNavigator />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.ghostWHite,
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-  },
-});

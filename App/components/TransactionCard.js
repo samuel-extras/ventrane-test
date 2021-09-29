@@ -5,7 +5,7 @@ import colors from "../config/colors";
 
 const TransactionCard = ({ amount, icon, title, subTitle, inner, outer }) => {
   return (
-    <TouchableHighlight underlayColor={"#f8f4f4"} style={styles.card}>
+    <TouchableHighlight style={styles.card}>
       <View style={styles.container}>
         <View style={[styles.logo, { backgroundColor: outer }]}>
           <View style={[styles.logoInner, { backgroundColor: inner }]}>
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   card: {
-    marginVertical: 10,
+    marginVertical: "2%",
   },
   container: {
     flexDirection: "row",
@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
     borderRadius: 12,
+    elevation: 1,
   },
   detailsContainer: {
     marginLeft: 20,
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: "bold",
-    paddingBottom: 10,
+    paddingBottom: "2%",
     fontSize: 20,
     color: colors.slateGray,
   },

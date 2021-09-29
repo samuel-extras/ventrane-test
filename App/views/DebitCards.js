@@ -39,38 +39,29 @@ const cards = [
 const DebitCards = (props) => {
   return (
     <View style={styles.container}>
-      <ScrollView
+      <FlatList
+        data={cards}
         horizontal
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{
-          flexGrow: 1,
-          justifyContent: "center",
-        }}
+        keyExtractor={(item) => item.value.toString()}
         initialScrollIndex={1}
-        contentOffset={{
-          x: 1,
-          y: 1,
+        contentContainerStyle={{
+          justifyContent: "center",
+          alignItems: "center",
+          flexGrow: 1,
         }}
-      >
-        <FlatList
-          data={cards}
-          horizontal
-          keyExtractor={(item) => item.value.toString()}
-          nestedScrollEnabled
-          initialScrollIndex={1}
-          renderItem={({ item }) => (
-            <DebitCard
-              name={item.name}
-              type={item.type}
-              color={item.color}
-              currency={item.currency}
-              expire={item.expire}
-              digit={item.digit}
-              balance={item.balance}
-            />
-          )}
-        />
-      </ScrollView>
+        renderItem={({ item }) => (
+          <DebitCard
+            name={item.name}
+            type={item.type}
+            color={item.color}
+            currency={item.currency}
+            expire={item.expire}
+            digit={item.digit}
+            balance={item.balance}
+          />
+        )}
+      />
     </View>
   );
 };
